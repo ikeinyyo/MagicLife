@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
 import Counter from '../counter/Counter';
+import Settings from '../settings/Settings';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -23,6 +24,7 @@ export default class App extends Component {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
+        <Settings />
         <Counter />
       </View>
     );

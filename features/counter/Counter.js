@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, Button } from 'react-native';
 import { connect } from 'react-redux';
 
-import { increment, decrement } from './actions';
+import { increment, decrement } from '../shared/actions/counter';
 
 class Counter extends Component {
   render() {
@@ -20,8 +20,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onIncrement: () => dispatch(increment),
-    onDecrement: () => dispatch(decrement)
+    onIncrement: () => dispatch(increment()),
+    onDecrement: () => dispatch(decrement())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)
