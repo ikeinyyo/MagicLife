@@ -1,10 +1,10 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
-import App from './features/app/App';
-import { render } from 'react-dom'
 import { createStore } from 'redux';
-import reducer from './reducers';
 import { Provider } from 'react-redux'
+
+import App from './features/app/App';
+import reducer from './reducers';
 
 const store = createStore(reducer)
 

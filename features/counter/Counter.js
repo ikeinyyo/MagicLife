@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
 import { Text, View, Button } from 'react-native';
-import { increment, decrement } from './actions.js';
 import { connect } from 'react-redux';
 
-class Counter extends Component {
-  constructor(){
-       super();
-   }
+import { increment, decrement } from './actions';
 
+class Counter extends Component {
   render() {
     return (
       <View>
         <Text>{this.props.count}</Text>
-        <Button title="-" onPress={this.props.onDecrement}></Button>
-        <Button title="+" onPress={this.props.onIncrement}></Button>
+        <Button title="-" onPress={this.props.onDecrement}/>
+        <Button title="+" onPress={this.props.onIncrement}/>
       </View>
-    );
-  };
+    )};
 }
 
 const mapStateToProps = state => ({
