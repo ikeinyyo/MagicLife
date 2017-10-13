@@ -1,3 +1,5 @@
 node_modules/
 .demeteorized/
 yarn-error.log
+/ios
+/android
