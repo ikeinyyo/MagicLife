@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
 import { increment, decrement } from '../shared/actions/counter';
@@ -12,10 +12,12 @@ class Counter extends Component {
 
   render() {
     return (
-      <View>
-        <Text>{this.props.getCount(this.props.index)}</Text>
-        <Button title="-" onPress={() => this.props.onDecrement(this.props.index)}/>
-        <Button title="+" onPress={() => this.props.onIncrement(this.props.index)}/>
+      <View style={this.props.style}>
+        <View style={styles.container}>
+          <Button title="-" onPress={() => this.props.onDecrement(this.props.index)}/>
+          <Text>{this.props.getCount(this.props.index)}</Text>
+          <Button title="+" onPress={() => this.props.onIncrement(this.props.index)}/>
+        </View>
       </View>
     )};
 }
@@ -29,4 +31,13 @@ const mapDispatchToProps = dispatch => ({
     onDecrement: (index) => dispatch(decrement({ index: index }))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

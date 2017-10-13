@@ -10,8 +10,6 @@ const counter = (state = INITIAL_LIFE_COUNT, action) => {
       return state + 1;
     case decrement.getType():
       return state > 0 ? state - 1 : state;
-    case reset.getType():
-        return INITIAL_LIFE_COUNT;
     default:
       return state;
   }
