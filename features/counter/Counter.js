@@ -3,6 +3,7 @@ import { Text, View, Button, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
 import { increment, decrement } from '../shared/actions/counter';
+import ButtonEx from '../shared/components/ButtonEx';
 
 class Counter extends Component {
 
@@ -13,10 +14,16 @@ class Counter extends Component {
   render() {
     return (
       <View style={this.props.style}>
+        <Text style={styles.life}>{this.props.getCount(this.props.index)}</Text>
         <View style={styles.container}>
-          <Button title="-" onPress={() => this.props.onDecrement(this.props.index)}/>
-          <Text>{this.props.getCount(this.props.index)}</Text>
-          <Button title="+" onPress={() => this.props.onIncrement(this.props.index)}/>
+          <ButtonEx
+            style={styles.button} textStyle={styles.button_text}
+            title="-"
+            onPress={() => this.props.onDecrement(this.props.index)}/>
+          <ButtonEx
+            style={styles.button} textStyle={styles.button_text}
+            title="+"
+            onPress={() => this.props.onIncrement(this.props.index)}/>
         </View>
       </View>
     )};
@@ -38,6 +45,24 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
   },
+  life: {
+    fontSize: 100,
+    textAlign: 'center',
+    alignSelf: 'center',
+  },
+  button: {
+    backgroundColor: 'transparent',
+    flexGrow: 1,
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+  },
+  button_text: {
+    fontSize: 72,
+    textAlign: 'center',
+  }
 });
