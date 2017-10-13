@@ -14,19 +14,19 @@ class Counter extends Component {
     return (
       <View>
         <Text>{this.props.getCount(this.props.index)}</Text>
-        <Button title="-" onPress={this.props.onDecrement}/>
-        <Button title="+" onPress={this.props.onIncrement}/>
+        <Button title="-" onPress={() => this.props.onDecrement(this.props.index)}/>
+        <Button title="+" onPress={() => this.props.onIncrement(this.props.index)}/>
       </View>
     )};
 }
 
 const mapStateToProps = state => ({
-    getCount: (index) => state.counter[index]
+    getCount: (index) => state.counters[index]
 });
 
 const mapDispatchToProps = dispatch => ({
-    onIncrement: () => dispatch(increment()),
-    onDecrement: () => dispatch(decrement())
+    onIncrement: (index) => dispatch(increment({ index: index })),
+    onDecrement: (index) => dispatch(decrement({ index: index }))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)
