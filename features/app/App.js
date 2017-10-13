@@ -25,7 +25,8 @@ export default class App extends Component {
           {instructions}
         </Text>
         <Settings />
-        <Counter />
+        <Counter index="0" />
+        <Counter index="1" />
       </View>
     );
   }

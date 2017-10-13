@@ -1,15 +1,15 @@
 import { increment, decrement, reset } from '../actions/counter'
 
 const INITIAL_LIFE_COUNT = 20;
-
-export const counter = (state = INITIAL_LIFE_COUNT, action) => {
+const initialState = [INITIAL_LIFE_COUNT, INITIAL_LIFE_COUNT];
+export const counter = (state = initialState, action) => {
   switch (action.type) {
     case increment.getType():
-      return state + 1;
+      return [state[0] + 1, state[1]];
     case decrement.getType():
-      return state > 0 ? state - 1 : state;
+      return [state[0] > 0 ? state[0] - 1 : state[0], state[1]];
     case reset.getType():
-        return INITIAL_LIFE_COUNT;
+        return initialState;
     default:
       return state;
   }

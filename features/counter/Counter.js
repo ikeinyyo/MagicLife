@@ -5,10 +5,15 @@ import { connect } from 'react-redux';
 import { increment, decrement } from '../shared/actions/counter';
 
 class Counter extends Component {
+
+  constructor() {
+    super();
+  }
+
   render() {
     return (
       <View>
-        <Text>{this.props.count}</Text>
+        <Text>{this.props.getCount(this.props.index)}</Text>
         <Button title="-" onPress={this.props.onDecrement}/>
         <Button title="+" onPress={this.props.onIncrement}/>
       </View>
@@ -16,7 +21,7 @@ class Counter extends Component {
 }
 
 const mapStateToProps = state => ({
-    count : state.counter
+    getCount: (index) => state.counter[index]
 });
 
 const mapDispatchToProps = dispatch => ({
