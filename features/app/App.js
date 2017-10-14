@@ -1,36 +1,12 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
-import Counter from '../counter/Counter';
+import Main from '../main/Main';
 import Settings from '../settings/Settings';
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Settings />
-        <View style={styles.counters}>
-          <Counter index="0" style={{backgroundColor: '#F6A28B', flexGrow: 1}} />
-          <Counter index="1" style={{backgroundColor: '#8DD4A9', flexGrow: 1}} />
-        </View>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-    marginTop: 20
-  },
-  counters: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'stretch'
-  },
-  counter: {
-    flexGrow: 1
-  }
+const App = StackNavigator({
+  Main: { screen: Main },
+  Settings: { screen: Settings },
 });
+
+export default App;
