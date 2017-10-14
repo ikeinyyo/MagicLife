@@ -16,7 +16,7 @@ export default class Main extends Component {
       <View style={styles.container}>
         <Toolbar onPressSettings={() => navigate('Settings')} />
         <View style={styles.counters}>
-          <Counter index="0" style={{backgroundColor: '#F6A28B', flexGrow: 1}} />
+          <Counter index="0"  />
           <Counter index="1" style={{backgroundColor: '#8DD4A9', flexGrow: 1}} />
         </View>
       </View>

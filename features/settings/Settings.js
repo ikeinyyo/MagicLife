@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Picker, StyleSheet, Text, View } from 'react-native';
+
+import DeckPicker from '../deckPicker/DeckPicker';
 
 export default class Settings extends Component {
 
@@ -10,7 +12,8 @@ export default class Settings extends Component {
   render() {
     return (
       <View>
-        <Text>Settings</Text>
+        <DeckPicker index="0" />
+        <DeckPicker index="1" />
       </View>
     );
   }

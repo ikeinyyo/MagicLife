@@ -13,7 +13,7 @@ class Counter extends Component {
 
   render() {
     return (
-      <View style={this.props.style}>
+      <View style={{backgroundColor: this.props.getColor(this.props.index), flexGrow: 1}}>
         <Text style={styles.life}>{this.props.getCount(this.props.index)}</Text>
         <View style={styles.container}>
           <ButtonEx
@@ -30,7 +30,8 @@ class Counter extends Component {
 }
 
 const mapStateToProps = state => ({
-    getCount: (index) => state.counters[index]
+  getCount: (index) => state.counters[index],
+  getColor: (index) => state.settings[index].color
 });
 
 const mapDispatchToProps = dispatch => ({
