@@ -10,8 +10,8 @@ export default class App extends Component {
       <View style={styles.container}>
         <Settings />
         <View style={styles.counters}>
-          <Counter index="0" style={{backgroundColor: 'red', flexGrow: 1}} />
-          <Counter index="1" style={{backgroundColor: 'green', flexGrow: 1}} />
+          <Counter index="0" style={{backgroundColor: '#F6A28B', flexGrow: 1}} />
+          <Counter index="1" style={{backgroundColor: '#8DD4A9', flexGrow: 1}} />
         </View>
       </View>
     );
