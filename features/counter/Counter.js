@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View, Button, StyleSheet } from 'react-native';
-import { connect } from 'react-redux';
-
-import { increment, decrement } from '../shared/actions/counter';
 import ButtonEx from '../shared/components/ButtonEx';
 
-class Counter extends Component {
-
-  constructor() {
-    super();
-  }
+export default class Counter extends Component {
 
   render() {
     return (
@@ -28,18 +21,6 @@ class Counter extends Component {
       </View>
     )};
 }
-
-const mapStateToProps = state => ({
-  getCount: (index) => state.counters[index],
-  getColor: (index) => state.settings[index].color
-});
-
-const mapDispatchToProps = dispatch => ({
-    onIncrement: (index) => dispatch(increment({ index: index })),
-    onDecrement: (index) => dispatch(decrement({ index: index }))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 const styles = StyleSheet.create({
   container: {

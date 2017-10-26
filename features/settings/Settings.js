@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Picker, StyleSheet, Text, View } from 'react-native';
 
-import DeckPicker from '../deckPicker/DeckPicker';
+import DeckPicker from '../deckPicker/DeckPicker-container';
 
 export default class Settings extends Component {
 

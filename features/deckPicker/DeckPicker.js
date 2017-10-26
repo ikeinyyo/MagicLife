@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Picker, Text, View } from 'react-native';
-import { connect } from 'react-redux';
 
-import { changeColorDeck } from '../settings/actions';
-
-class DeckPicker extends Component {
+export default class DeckPicker extends Component {
   render() {
     return (
       <View>
@@ -22,13 +19,3 @@ class DeckPicker extends Component {
     );
   }
 }
-
-const mapStateToProps = state => ({
-  getColor: (index) => state.settings[index].color
-});
-
-const mapDispatchToProps = dispatch => ({
-    onColorChange: (index, newColor) => dispatch(changeColorDeck({ index: index, newColor: newColor })),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(DeckPicker);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
-import Counter from '../counter/Counter';
+import Counter from '../counter/Counter-container';
 import Toolbar from '../toolbar/Toolbar';
 
 export default class Main extends Component {
