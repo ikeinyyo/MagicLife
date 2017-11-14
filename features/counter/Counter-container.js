@@ -6,7 +6,7 @@ import Counter from './Counter';
 
 const mapStateToProps = state => ({
   getCount: (index) => state.counters[index],
-  getColor: (index) => state.settings[index].color
+  getColor: (index) => state.settings[index] ? state.settings[index].color : null
 });
 
 const mapDispatchToProps = dispatch => ({

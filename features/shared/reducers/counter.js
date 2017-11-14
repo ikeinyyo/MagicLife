@@ -26,6 +26,7 @@ export const counters = (state = initialState, action) => {
     case reset.getType():
         return initialState;
     case changeNumberOfPlayers.getType():
+        return new Array(action.payload).fill(INITIAL_LIFE_COUNT);
     default:
       return state;
   }

@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onColorChange: (index, newColor) => dispatch(changeColorDeck({ index: index, newColor: newColor })),
+    onColorChange: (index, newColor) => dispatch(changeColorDeck({ index, newColor })),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckPicker);
