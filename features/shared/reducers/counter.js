@@ -1,4 +1,4 @@
-import { increment, decrement, reset } from '../actions/counter'
+import { increment, decrement, reset, changeNumberOfPlayers } from '../actions/counter'
 
 const INITIAL_LIFE_COUNT = 20;
 
@@ -25,6 +25,7 @@ export const counters = (state = initialState, action) => {
         ...state.slice(action.payload.index + 1)];
     case reset.getType():
         return initialState;
+    case changeNumberOfPlayers.getType():
     default:
       return state;
   }
