@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
-import Counter from '../counter/Counter-container';
+import CounterList from '../counterList/CounterList-container';
 import Toolbar from '../toolbar/Toolbar';
 
 export default class Main extends Component {
@@ -16,10 +16,7 @@ export default class Main extends Component {
       <View style={styles.container}>
         <Toolbar onPressSettings={() => navigate('Settings')} />
         <View style={styles.counters}>
-          <Counter index="0"  />
-          <Counter index="1" />
-          <Counter index="2" />
-          <Counter index="3" />
+          <CounterList />
         </View>
       </View>
     );
