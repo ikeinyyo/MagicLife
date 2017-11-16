@@ -3,6 +3,7 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 
 import CounterList from '../counterList/CounterList-container';
 import Toolbar from '../toolbar/Toolbar';
+import LifeBar from '../lifeBar/lifeBar-container';
 
 export default class Main extends Component {
 
@@ -15,6 +16,7 @@ export default class Main extends Component {
     return (
       <View style={styles.container}>
         <Toolbar onPressSettings={() => navigate('Settings')} />
+        <LifeBar />
         <View style={styles.counters}>
           <CounterList />
         </View>
