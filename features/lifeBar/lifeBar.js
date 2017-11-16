@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default class LifeBar extends Component {
   render() {
     return (
       <View style={styles.container}>
-          {this.props.counters.map(counter =>
-            <View style={{backgroundColor: counter ? counter.color: 'blue', flexGrow: counter ? counter.life : 1 }} />
+          {this.props.counters.map((counter, index) =>
+            (<TouchableOpacity key={index}
+              style={{backgroundColor: counter.color, flexGrow: counter.life }}
+              />)
           )}
       </View>
     );
@@ -16,6 +18,8 @@ export default class LifeBar extends Component {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    height: 5
+    height: 10,
+    marginTop: 5,
+    marginBottom: 5
   }
 });

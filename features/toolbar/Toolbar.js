@@ -3,13 +3,14 @@ import { View, Button, Alert } from 'react-native';
 import { connect } from 'react-redux';
 
 import { reset } from '../shared/actions/counter';
+import ButtonEx from '../shared/components/ButtonEx';
 
 class Toolbar extends Component {
   render() {
     return (
-      <View style={{ flexDirection: 'row' }}>
-        <Button title="Reiniciar" onPress={this.reset.bind(this)}/>
-        <Button title="Configuración" onPress={this.props.onPressSettings}/>
+      <View style={{ flexDirection: 'row', marginTop: 5 }}>
+        <ButtonEx style={{marginLeft: 5}} title="Reiniciar" onPress={this.reset.bind(this)}/>
+        <ButtonEx style={{marginLeft: 5}} title="Configuración" onPress={this.props.onPressSettings}/>
       </View>
     )};
 
